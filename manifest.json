@@ -1,6 +1,6 @@
 {
-    "name": "timer",
-    "description": "タイマー",
+    "name": "stopwatch",
+    "description": "stopwatch",
     "version": "1.0.0",
     "manifest_version": 2,
     "permissions": [
