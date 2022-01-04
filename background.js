@@ -23,6 +23,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     }else if (request.text == "stop") {
         timeCountFlg = false;
         clearInterval(bgIntervalId);
+        alert("止まりました");
     } else if (request.text == "reset") {
         timeCount = 0;
     }

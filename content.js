@@ -47,8 +47,17 @@ $(function() {
     function reflectCount() {
         let min = 0;
         let sec = 0;
+        let limit = 60 * 60 * 5;
 
         bgTimeCount = background.timeCount;
+
+        if (bgTimeCount >= limit) {
+            //自動停止
+            chrome.runtime.sendMessage({text: "stop"}, function() {});
+            clearInterval(intervalId);
+            alert("5時間経過したため、自動停止しました");
+        }
+
         min = String(Math.floor(bgTimeCount / 60));
         sec = String(bgTimeCount - min*60);
         sec = sec.length == 1 ? `0${sec}` : sec;
